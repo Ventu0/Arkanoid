@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class MovimentoBemBala : MonoBehaviour
 {
-    public float speed = 5;
-    float movimentHorizontal;
+    public float speed = 10f;
+    private float moveInput;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,8 +18,9 @@ public class MovimentoBemBala : MonoBehaviour
     void Update()
     {
 
-       //ovimentHorizontal = Input.GetAxis("Horizontal");
-        //ansform.position +=Vector3.right.movementHorizontal * speed * Time.deltaTime;
+        moveInput = Input.GetAxis("Horizontal");
+        Vector3 move = new Vector3(moveInput, 0, 0);
+        transform.Translate(move * speed * Time.deltaTime);     
 
     }
 }
